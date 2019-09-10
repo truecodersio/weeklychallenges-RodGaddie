@@ -6,17 +6,28 @@ namespace ChallengesWithTestsMark8
     {
         public bool AreTwoNumbersTheSame(int num1, int num2)
         {
-            throw new NotImplementedException();
+          if ( num1 == num2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public double Subtract(double minuend, double subtrahend)
         {
-            throw new NotImplementedException();
+            double m = minuend;
+            double s = subtrahend;
+                return m - s;
         }
 
         public int Add(int number1, int number2)
         {
-            throw new NotImplementedException();
+            int num1 = number1;
+            int num2 = number2;
+            return num1 + num2;
         }
 
         public int GetSmallestNumber(int number1, int number2)
