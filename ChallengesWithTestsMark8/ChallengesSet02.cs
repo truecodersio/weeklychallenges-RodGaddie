@@ -65,11 +65,8 @@ namespace ChallengesWithTestsMark8
 
         public int Sum(int[] numbers)
         {
-            var sum = 0
-                for (var i = 0; i < numbers.Length; i++)
-            {
-                return sum++;
-            }
+            var sum = 0;
+           return sum++;
         }
 
         public int SumEvens(int[] numbers)
