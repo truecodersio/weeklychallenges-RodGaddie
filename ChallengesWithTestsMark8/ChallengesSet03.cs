@@ -7,47 +7,113 @@ namespace ChallengesWithTestsMark8
     {
         public bool ArrayContainsAFalse(bool[] vals)
         {
-            throw new NotImplementedException();
+            bool contains = false;
+            for (var i = 0; i < vals.Length; i++)
+            {
+               if (vals[i] == false)
+               { 
+                    contains = true;
+               }
+            }
+               return contains;
         }
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+            {
+                return false;
+            }
+            bool odd = false;
+            var sum = 0;
+            foreach (int value in numbers)
+            {
+                sum += value;
+            }
+            if (sum % 2 != 0)
+            {
+                odd = true;
+            }
+           
+            return odd;
         }
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
         {
-            throw new NotImplementedException();
+            
+            bool isUp = false;
+            bool isLow = false;
+            bool isNum = false;
+            bool goodTG = false;
+
+            for (var i = 0; i < password.Length; i++)
+            {
+                if (char.IsUpper(password[i]))
+                {
+                    isUp = true;
+                }
+                if (char.IsLower(password[i]))
+                {
+                    isLow = true;
+                }
+                if (char.IsDigit(password[i]))
+                {
+                    isNum = true;
+                }
+            }
+            if (isUp && isLow && isNum)
+            {
+                goodTG = true;
+            }
+            return goodTG;
         }
 
         public char GetFirstLetterOfString(string val)
         {
-            throw new NotImplementedException();
+            return val[0];
         }
 
         public char GetLastLetterOfString(string val)
         {
-            throw new NotImplementedException();
+            var last = val[val.Length -1];
+            return last;
         }
 
         public decimal Divide(decimal dividend, decimal divisor)
         {
-            throw new NotImplementedException();
+            if (divisor == 0)
+            {
+                return 0;
+            }
+            var answer = dividend / divisor;
+            return answer;
         }
 
         public int LastMinusFirst(int[] nums)
         {
-            throw new NotImplementedException();
+            int answer = nums[nums.Length - 1] - nums[0];
+            return answer;
         }
 
         public int[] GetOddsBelow100()
         {
-            throw new NotImplementedException();
+            var myList = new List<int>();
+            for (var i = 0; i < 100; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    myList.Add(i);
+                }
+            }
+            return myList.ToArray();
         }
 
         public void ChangeAllElementsToUppercase(string[] words)
         {
-            throw new NotImplementedException();
+            for (var i = 0; i < words.Length; i++)
+            {
+                words[i] = words[i].ToUpper();
+            }
         }
     }
 }

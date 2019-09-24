@@ -142,7 +142,7 @@ namespace ChallengesWithTestsMark8
                 }
             }
             if (number < 0)
-            {
+            {  
                 return 0;
             }
             return count;
