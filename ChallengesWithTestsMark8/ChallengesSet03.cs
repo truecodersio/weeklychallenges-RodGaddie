@@ -7,6 +7,10 @@ namespace ChallengesWithTestsMark8
     {
         public bool ArrayContainsAFalse(bool[] vals)
         {
+            if (vals == null)
+            {
+                return false; 
+            }
             bool contains = false;
             for (var i = 0; i < vals.Length; i++)
             {
@@ -112,7 +116,7 @@ namespace ChallengesWithTestsMark8
         {
             for (var i = 0; i < words.Length; i++)
             {
-                words[i] = words[i].ToUpper();
+                words[i] = words[i].ToUpper(); 
             }
         }
     }
