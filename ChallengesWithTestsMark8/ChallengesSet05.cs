@@ -7,45 +7,57 @@ namespace ChallengesWithTestsMark8
     {
         public int GetNextNumberDivisibleByN(int startNumber, int n)
         {
-            return ((startNumber / n) + 1) * n;
+            int output = ((startNumber / n) + 1) * n;
+            return output;
         }
 
         public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
         {
-            for (int i = 0; i < businesses.Length; i++)
+           for (var x = 0; x < businesses.Length; x++)
             {
-                if (businesses[i].TotalRevenue == 0)
+                if (businesses[x].TotalRevenue == 0)
                 {
-                    businesses[i].Name = "CLOSED";
+                    businesses[x].Name = "CLOSED";
                 }
+
             }
         }
 
         public bool IsAscendingOrder(int[] numbers)
         {
             if (numbers == null)
-                return false;
-
-            for (int i = 1; i < numbers.Length; i++)
             {
-                if (numbers[i] < numbers[i - 1])
+                return false;
+            }
+            if (numbers.Length == 0)
+            {
+                return false;
+            }
+            for (var x = 1; x < numbers.Length; x++)
+            {
+                if(numbers[x] < numbers[x - 1])
                 {
                     return false;
                 }
             }
-
+            
             return true;
         }
 
         public int SumElementsThatFollowAnEven(int[] numbers)
         {
-            int sum = 0;
-
-            for (int i = 1; i < numbers.Length; i++)
+            if (numbers == null)
             {
-                if (numbers[i - 1] % 2 == 0)
+                return 0;
+            }
+
+            var sum = 0;
+
+            for (var x = 1; x < numbers.Length; x++)
+            {
+                if (numbers[x - 1] % 2 == 0)
                 {
-                    sum += numbers[i];
+                    sum += numbers[x];
                 }
             }
 
@@ -81,7 +93,13 @@ namespace ChallengesWithTestsMark8
 
         public double[] GetEveryFourthElement(List<double> elements)
         {
+
             List<double> everyFourth = new List<double>();
+
+            if (elements == null)
+            {
+                return new double[] { };
+            }
 
             for (int i = 3; i < elements.Count; i += 4)
             {

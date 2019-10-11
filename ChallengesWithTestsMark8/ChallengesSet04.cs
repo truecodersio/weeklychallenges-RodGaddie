@@ -20,12 +20,12 @@ namespace ChallengesWithTestsMark8
                     num -= numbers[x];
                 }
             }
+
             return num;
         }
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
-           
             List<string> strList = new List<string>();
             strList.Add(str1);
             strList.Add(str2);
@@ -80,13 +80,13 @@ namespace ChallengesWithTestsMark8
                    if (sideLength2 + sideLength3 > sideLength1)
                    {
                         triangle = true;
-                   }
+                    }
                }
             }
            
             return triangle;
         }
-
+        
         public bool IsStringANumber(string input)
         {
              bool result = double.TryParse(input, out double _);
@@ -148,7 +148,7 @@ namespace ChallengesWithTestsMark8
             {
                 throw new ArgumentOutOfRangeException();
             }
-            return number;
+            return number; 
         }
     }
 }
