@@ -23,7 +23,7 @@ namespace ChallengesWithTestsMark8
             {
                 contains = true;
             }
-            
+
             return contains;
 
         }
@@ -54,13 +54,13 @@ namespace ChallengesWithTestsMark8
             int index = -1;
             bool uniqueIndex;
 
-            for(int i = 0; i < str.Length; i++)
+            for (int i = 0; i < str.Length; i++)
             {
                 uniqueIndex = true;
 
-                for(int j = 0; j < str.Length; j++)
+                for (int j = 0; j < str.Length; j++)
                 {
-                    if(str[i] == str[j] && i != j)
+                    if (str[i] == str[j] && i != j)
                     {
                         uniqueIndex = false;
                     }
@@ -77,12 +77,40 @@ namespace ChallengesWithTestsMark8
 
         public int MaxConsecutiveCount(int[] numbers)
         {
-            throw new NotImplementedException();
+            var count = 0;
+            
+            for (var i = 0; i < numbers.Length; i++)
+            {
+                int currentcount = 1;
+
+                for (var j = i+1; j < numbers.Length; j++)
+                {
+                    if (numbers[j] != numbers[i])
+                    {
+                        break;
+                    }
+
+                    currentcount++;
+                }
+                if (currentcount > count)
+                {
+                    count = currentcount;
+                }
+            }
+
+            return count;
+
         }
 
         public double[] GetEveryNthElement(List<double> elements, int n)
         {
-            throw new NotImplementedException();
+            double[] turn = new double[0];
+            if (elements == null || n < 0)
+            {
+                return turn;
+            }
+
+            return elements.Where((x, i) => x % n == 0).ToArray();
         }
     }
 }
